@@ -1,19 +1,19 @@
 # Tool Learning Log
 
-## Tool: **X**
+## Tool: Ka-boom
 
-## Project: **X**
+## Project: Video game about the flash
 
 ---
 
-### X/X/XX:
+### 09/29/2025:
 * Text
 
 ### X/X/XX:
 * Text
 
 
-<!-- 
+<!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
 * Challenges, a-ha moments, etc
