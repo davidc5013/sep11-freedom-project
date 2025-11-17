@@ -36,29 +36,8 @@ kaboom(
 // load a sprite "bean" from an image
 loadSprite("dog", "images/dog.jpg")
 
-// add something to screen
-// putting together our player character
-const dog = add([
-    sprite("dog"),
-    //scale(1.5),
-    pos(40, 40),
-    area(),
-    body(2),
-])
 
-// .jump() when "space" key is pressed
-onKeyPress("space", () => {
-    dog.jump()
-})
 
-add([
-    rect(width(), 48),
-    pos(0, height() - 48),
-    outline(4),
-    area(),
-    body({ isStatic: true }),
-    color(127, 200, 255),
-])
 
 </script>
 
