@@ -31,7 +31,24 @@ add([
 
 ```
 
-It didn't work because of the fact, there was no folder or any inport of the `sprite` `bean`, so i was just left confused. Until one day I asked my friend Jason as
+It didn't work because of the fact, there was no folder or any inport of the `sprite` `bean`, so i was just left confused. Until one day I asked my friend Jason to help me out in that part, and he told me, "maybe you should make your own sprite" or something around those lines, but then It was like uploading a screenshot, but instead of a screenshot it would just be a image, so i would use a image from my personal laptop and the code would turn to something like this:
+
+
+```
+// load a sprite "bean" from an image
+loadSprite("dog", "images/dog.jpg")
+
+// add something to screen
+// putting together our player character
+const dog = add([
+    sprite("dog"),
+    pos(80, 560),
+    scale(0.1),
+])
+
+
+
+```
 
 <!--
 * Links you used today (websites, videos, etc)
