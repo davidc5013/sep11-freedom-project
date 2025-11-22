@@ -55,6 +55,9 @@ and the output would be
 ![alt text](<Screenshot 2025-11-21 at 11.21.10 PM.png>)
 
 
+and we no longer have bean 
+
+
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
