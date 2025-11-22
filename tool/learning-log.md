@@ -15,7 +15,23 @@ Hello hello, So this is my first learning log (yikes), but anyways, I've tinkeri
 
 `import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";`
 
-but 
+but it didn't because when i copy this code from the website
+
+```
+// load a sprite "bean" from an image
+loadSprite("bean", "sprites/bean.png")
+
+// add something to screen
+add([
+    sprite("bean"),
+    pos(80, 40),
+])
+
+
+
+```
+
+It didn't work because of the fact, there was no folder or any inport of the `sprite` `bean`, so i was just left confused. Until one day I asked my friend Jason as
 
 <!--
 * Links you used today (websites, videos, etc)
