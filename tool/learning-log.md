@@ -9,9 +9,13 @@
 ### 09/29/2025:
 * Text
 
-### X/X/XX:
+### 11/21/2025:
 * Text
+Hello hello, So this is my first learning log (yikes), but anyways, I've tinkering here and there, I think a main stumble in my tinkering was the "https://kaboomjs.com/doc/intro"  where  if you wanted to start anything, like character wise, it would have through a bean charcter, and i was like okay, well It doesn't matter cause i thought it would just download automotically when i inported the java script code (this one):
 
+`import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";`
+
+but 
 
 <!--
 * Links you used today (websites, videos, etc)
