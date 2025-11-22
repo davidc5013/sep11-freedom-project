@@ -55,7 +55,10 @@ and the output would be
 ![alt text](<Screenshot 2025-11-21 at 11.21.10 PM.png>)
 
 
-and we no longer have bean 
+and we no longer have bean but rahter, Dog, the sprite. (might not seem a lot and it's not but its okay progress, just more time to cook up something), after this though, i learned about other things for the sprite, like scale. And i use it for my sprite because the original size of the dog image is HUGEEE, so i had to use the scale to size it down.
+
+
+* I think the next steps would be too add movements like jumping, arrows to move around the sprite.
 
 
 <!--
