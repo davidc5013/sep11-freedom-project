@@ -8,7 +8,7 @@ Hello everybody, this is my first blog as a junior for my SEP11 freedom project.
 
 #### The tool and tinkering
 
-"But how are you going to do that?" To that I say im going to be using <p> <a href="https://kaboomjs.com/">kaboom</a></p>, a JavaScript program that helps coding games easier and fun. 
+"But how are you going to do that?" To that I say im going to be using  <a href="https://kaboomjs.com/">kaboom</a>, a JavaScript program that helps coding games easier and fun.
 
 
 [Next](entry02.md)
