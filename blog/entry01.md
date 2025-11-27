@@ -4,7 +4,7 @@
 
 ### Content
 
-Hello everybody, this is my first blog as a junior for my sep11 freedom project. I think at this point the readers will know the purpose of blogs and freedom project, but in case 
+Hello everybody, this is my first blog as a junior for my sep11 freedom project. I think at this point the readers will know the purpose of blogs and freedom project, but in case you don't, Freedom project is a whole year 
 
 [Next](entry02.md)
 
