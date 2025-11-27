@@ -1,7 +1,7 @@
 # Entry 1
-##### X/X/XX
+##### 11/26/2025
 
-Text
+Hello everybody, 
 
 [Next](entry02.md)
 

@@ -32,7 +32,7 @@ import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
 kaboom(
 
 );
-
+setGravity(1600)
 // load a sprite "bean" from an image
 loadSprite("dog", "images/dog.jpg")
 
@@ -41,22 +41,48 @@ loadSprite("dog", "images/dog.jpg")
 const dog = add([
     sprite("dog"),
     pos(80, 560),
-    scale(0.1),
+    scale(0.05),
+    area(),
+    body(),
 ])
 
 // .jump() when "space" key is pressed
 onKeyPress("space", () => {
-    dog.jump()
-})
+    if (dog.isGrounded()) {
+        dog.jump();
+    }
+});
 
 add([
-    rect(width(), 48),
-    pos(0, height() - 48),
+    rect(width(), 60),
+    pos(0, height() - 60),
     outline(4),
     area(),
     body({ isStatic: true }),
     color(127, 200, 255),
 ])
+
+
+loop(1, () => {
+    // add tree
+    add([
+        rect(48, rand(24, 64)),
+        area(),
+        outline(4),
+        pos(width(), height() - 48),
+        anchor("botleft"),
+        color(255, 180, 255),
+        move(LEFT, 240),
+        "tree", // add a tag here
+    ]);
+});
+
+
+
+dog.onCollide("tree", () => {
+    addKaboom(dog.pos);
+    shake();
+});
 
 </script>
 
