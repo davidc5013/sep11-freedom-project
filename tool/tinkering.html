@@ -28,18 +28,17 @@
 // import kaboom.js
 import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
 
-// initialize kaboom context
-kaboom(
 
-);
+
+kaboom()
 const SPEED = 320
 setGravity(600)
 // load a sprite "bean" from an image
 loadSprite("dog", "images/dog.jpg")
 
-// add something to screen
-// putting together our player character
-const dog = add([
+scene("game", () => {
+    // add bean
+    const dog = add([
     sprite("dog"),
     pos(80, 200),
     scale(0.05),
@@ -54,26 +53,26 @@ onKeyPress("space", () => {
     }
 });
 onKeyDown("left", () => {
-	// .move() is provided by pos() component, move by pixels per second
-	dog.move(-SPEED, 0)
+    // .move() is provided by pos() component, move by pixels per second
+    dog.move(-SPEED, 0)
 })
 
 onKeyDown("right", () => {
-	dog.move(SPEED, 0)
+    dog.move(SPEED, 0)
 })
 
-//platform
 
-add([
+
+    // add platform
+    add([
     rect(width(2), 40),
     pos(0, height() - 200),
-    outline(4),
     area(2),
+    outline(4),
     body({ isStatic: true }),
     color(127, 200, 255),
 ])
-
-    //challanges
+    // spawn trees
 
 function spawnTree() {
     add([
@@ -95,10 +94,11 @@ spawnTree();
 // allows the tree to spawn
 
 
-dog.onCollide("tree", () => {
-    addKaboom(dog.pos);
-    shake();
 });
+
+go("game")
+
+
 
 
 
