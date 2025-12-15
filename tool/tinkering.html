@@ -96,18 +96,27 @@ spawnTree();
 
 });
 
-scene("lose", () => {
-    add([
-        text("Game Over"),
-        pos(center()),
-        anchor("center"),
-    ])
+scene("lose", (score) => {
 
-})
-  dog.onCollide("tree", () => {
-    addKaboom(dog.pos);
-    shake();
-    go("lose"); // go to "lose" scene here
+    add([
+        sprite("dog"),
+        pos(width() / 2, height() / 2 - 80),
+        scale(2),
+        anchor("center"),
+    ]);
+
+    // display score
+    add([
+        text(score),
+        pos(width() / 2, height() / 2 + 80),
+        scale(2),
+        anchor("center"),
+    ]);
+
+    // go back to game with space is pressed
+    onKeyPress("space", () => go("game"));
+    onClick(() => go("game"));
+
 });
 
 go("game")
