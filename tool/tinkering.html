@@ -102,7 +102,13 @@ scene("lose", () => {
         pos(center()),
         anchor("center"),
     ])
+
 })
+  dog.onCollide("tree", () => {
+    addKaboom(dog.pos);
+    shake();
+    go("lose"); // go to "lose" scene here
+});
 
 go("game")
 
