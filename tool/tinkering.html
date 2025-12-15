@@ -96,6 +96,14 @@ spawnTree();
 
 });
 
+scene("lose", () => {
+    add([
+        text("Game Over"),
+        pos(center()),
+        anchor("center"),
+    ])
+})
+
 go("game")
 
 
