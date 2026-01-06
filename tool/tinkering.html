@@ -28,9 +28,58 @@
 // import kaboom.js
 import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
 
-
+//goal make some time of rpg free movement game
 
 kaboom()
+//Set up
+const SPEED = 200
+loadSprite("The Flash", "images/the_flash.jpg")
+loadSprite("The Reverse Flash", "images/reverse_flash.jpg")
+debug.inspect = true
+
+
+//Dogs components
+const Flash = add([
+    sprite("The Flash"),
+    pos(80, 200),
+    scale(0.5),
+    area(),
+    body(),
+
+])
+
+
+//Flash movements
+
+onKeyDown("left", () => {
+    Flash.move(-SPEED, 0)
+})
+
+onKeyDown("right", () => {
+    Flash.move(SPEED, 0)
+})
+
+onKeyDown("up", () => {
+    Flash.move(0, -SPEED)
+})
+
+onKeyDown("down", () => {
+    Flash.move(0, SPEED)
+})
+
+
+
+// Enemy
+const Reverse = add([
+    sprite("The Reverse Flash"),
+    pos(160, 200),
+    scale(0.5),
+    area(),
+])
+
+
+
+/*
 const SPEED = 320
 setGravity(600)
 // load a sprite "bean" from an image
@@ -127,7 +176,7 @@ scene("lose", (score) => {
 });
 
 go("game")
-
+*/
 
 
 
