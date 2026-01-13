@@ -1,7 +1,7 @@
 # Entry 2
-##### X/X/XX
+##### 01/05/2024
 
-Text
+Hello evry
 
 [Previous](entry01.md) | [Next](entry03.md)
 
