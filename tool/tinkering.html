@@ -32,13 +32,15 @@ import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
 
 kaboom()
 //Set up
-const SPEED = 200
+const BULLET_SPEED = 200
+const SPEED = 400
+const REVERSE_SPEED= 200
 loadSprite("The Flash", "images/the_flash.jpg")
 loadSprite("The Reverse Flash", "images/reverse_flash.jpg")
 debug.inspect = true
 
 
-//Dogs components
+//Flash components
 const Flash = add([
     sprite("The Flash"),
     pos(80, 200),
@@ -75,8 +77,57 @@ const Reverse = add([
     pos(160, 200),
     scale(0.5),
     area(),
+    state("move", [ "attack", "move"])
 ])
 
+
+
+
+
+Reverse.onStateEnter("attack", async () => {
+
+	// Don't do anything if player doesn't exist anymore
+	if (Flash.exists()) {
+
+		const dir = Flash.pos.sub(Reverse.pos).unit()
+
+		add([
+			pos(Reverse.pos),
+			move(dir, BULLET_SPEED),
+			rect(12, 12),
+			area(),
+			offscreen({ destroy: true }),
+			anchor("center"),
+			color(RED),
+			"bullet",
+		])
+
+	}
+
+	await wait(1)
+	Reverse.enterState("move")
+
+})
+
+Reverse.onStateEnter("move", async () => {
+	await wait(2)
+	Reverse.enterState("attack")
+})
+
+
+
+
+Reverse.onStateUpdate("move", () => {
+	if (!Reverse.exists()) return
+	const dir = Flash.pos.sub(Reverse.pos).unit()
+	Reverse.move(dir.scale(REVERSE_SPEED))
+})
+
+// Taking a bullet makes us disappear
+Flash.onCollide("bullet", (bullet) => {
+	destroy(bullet)
+	destroy(Flash)
+})
 
 
 /*
