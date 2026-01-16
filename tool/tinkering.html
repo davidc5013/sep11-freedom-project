@@ -32,11 +32,12 @@ import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
 
 kaboom()
 //Set up
-const BULLET_SPEED = 200
-const SPEED = 400
-const REVERSE_SPEED= 200
+const BULLET_SPEED = 350
+const SPEED = 500
+const REVERSE_SPEED= 400
 loadSprite("The Flash", "images/the_flash.jpg")
 loadSprite("The Reverse Flash", "images/reverse_flash.jpg")
+loadSprite("Captian Cold", "images/captian_cold.jpg")
 debug.inspect = true
 
 
@@ -71,10 +72,10 @@ onKeyDown("down", () => {
 
 
 
-// Enemy
+// Reverse Flash
 const Reverse = add([
     sprite("The Reverse Flash"),
-    pos(160, 200),
+    pos(200, 200),
     scale(0.5),
     area(),
     state("move", [ "attack", "move"])
@@ -86,7 +87,6 @@ const Reverse = add([
 
 Reverse.onStateEnter("attack", async () => {
 
-	// Don't do anything if player doesn't exist anymore
 	if (Flash.exists()) {
 
 		const dir = Flash.pos.sub(Reverse.pos).unit()
@@ -123,11 +123,53 @@ Reverse.onStateUpdate("move", () => {
 	Reverse.move(dir.scale(REVERSE_SPEED))
 })
 
-// Taking a bullet makes us disappear
 Flash.onCollide("bullet", (bullet) => {
 	destroy(bullet)
 	destroy(Flash)
 })
+
+
+// Captian Cold shooter components
+
+const Cold = add([
+    sprite("Captian Cold"),
+    pos(500, 200),
+    scale(0.5),
+    area(),
+    state("attack", ["attack"]),
+])
+
+
+Cold.onStateEnter("attack", async () => {
+    
+    while (Cold.exists()) {
+
+        if (Flash.exists()) {
+            const dir = Flash.pos.sub(Cold.pos).unit()
+
+            add([
+                pos(Cold.pos),
+                move(dir, BULLET_SPEED),
+                rect(12, 12),
+                area(),
+                offscreen({ destroy: true }),
+                anchor("center"),
+                color(BLUE),
+                "freeze",
+            ])
+        }
+
+        await wait(1.2)
+    }
+})
+
+
+
+
+
+
+
+
 
 
 /*
