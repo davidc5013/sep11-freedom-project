@@ -53,7 +53,47 @@ It allows me to hover around the sprite and see the codes such as
     area(),
     body(),
 ```
-its helpful when eventually i add more collosion into the code with blocks and other things. With the sprite 
+ A image example would look like this:
+
+![alt text](<Screenshot 2026-01-15 at 10.38.02 PM.png>)
+
+
+
+```
+//Flash components
+const Flash = add([
+    sprite("The Flash"),
+    pos(80, 200),
+    scale(0.5),
+    area(),
+    body(),
+
+])
+```
+
+The movement of the sprite at first was simple because I did it before but it was adding the moovement to move up and down.
+
+```
+//Flash movements
+movement for the left
+onKeyDown("left", () => {
+    Flash.move(-SPEED, 0)
+})
+movement to the right
+onKeyDown("right", () => {
+    Flash.move(SPEED, 0)
+})
+movement to move up
+onKeyDown("up", () => {
+    Flash.move(0, -SPEED)
+})
+and movement to move down
+onKeyDown("down", () => {
+    Flash.move(0, SPEED)
+})
+```
+
+Something interesting I noticed in the example from Kaboom is that if you look closely at the `Flash.move(0, -SPEED)` the arrangement of -SPEED is different, when moving sides to sides, the speed comes first, while moving up and down is last, also with negatives in moving left and down. The reason is the positioning. The grid in Kaboom is like geomotry, x and y, so it would be like this in geomtry terms `Flash.move(x,y)` as your moving to the right, the number will increase because of the position of the sprite, same thing when it down, the number will increase and oppsoite way around with left and down, the numbers will decrease.
 
 
 
