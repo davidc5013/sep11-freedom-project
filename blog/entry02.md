@@ -97,6 +97,21 @@ Something interesting I noticed in the example from Kaboom is that if you look c
 
 
 
+Another thing I added was a enmeny ai that was a bot that used states, which says what is the sprite doing right now.
+
+```
+// Reverse Flash
+const Reverse = add([
+    sprite("The Reverse Flash"),
+    pos(200, 200),
+    scale(0.5),
+    area(),
+    state("move", [ "attack", "move"])
+])
+```
+ Using this concept and the examples from kaboom I wanted to create two ai bots, one which was the reverse flash that would have two states, move which would follow the sprite (flash) and would attack, which would just stop him from moving. And the next sprite, captian cold was a what if sitution. What if i created a 2nd sprite that would always be in a attack state.
+
+
 [Previous](entry01.md) | [Next](entry03.md)
 
 [Home](../README.md)
