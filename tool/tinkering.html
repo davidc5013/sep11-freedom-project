@@ -32,244 +32,48 @@ import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
 
 kaboom()
 //Set up
-const BULLET_SPEED = 350
-const SPEED = 500
-const REVERSE_SPEED= 400
 loadSprite("The Flash", "images/the_flash.jpg")
-loadSprite("The Reverse Flash", "images/reverse_flash.jpg")
-loadSprite("Captian Cold", "images/captian_cold.jpg")
+loadSprite("Cobble Wall", "images/wall.jpg")
 debug.inspect = true
 
 
-//Flash components
-const Flash = add([
-    sprite("The Flash"),
-    pos(80, 200),
-    scale(0.5),
-    area(),
-    body(),
-
-])
+// ALL DATA NO FUNCTION TO THE GAME
 
 
-//Flash movements
+    const levels = [
 
-onKeyDown("left", () => {
-    Flash.move(-SPEED, 0)
-})
-
-onKeyDown("right", () => {
-    Flash.move(SPEED, 0)
-})
-
-onKeyDown("up", () => {
-    Flash.move(0, -SPEED)
-})
-
-onKeyDown("down", () => {
-    Flash.move(0, SPEED)
-})
+            [
+                "============",
+                "=          =",
+                "= a        =",
+                "=      b   =",
+                "=          =",
+                "=          =",
+                "=  $       =",
+                "============",
 
 
+            ]
 
-// Reverse Flash
-const Reverse = add([
-    sprite("The Reverse Flash"),
-    pos(200, 200),
-    scale(0.5),
-    area(),
-    state("move", [ "attack", "move"])
-])
+    ]
 
 
-
-
-
-Reverse.onStateEnter("attack", async () => {
-
-	if (Flash.exists()) {
-
-		const dir = Flash.pos.sub(Reverse.pos).unit()
-
-		add([
-			pos(Reverse.pos),
-			move(dir, BULLET_SPEED),
-			rect(12, 12),
-			area(),
-			offscreen({ destroy: true }),
-			anchor("center"),
-			color(RED),
-			"bullet",
-		])
-
-	}
-
-	await wait(1)
-	Reverse.enterState("move")
-
-})
-
-Reverse.onStateEnter("move", async () => {
-	await wait(2)
-	Reverse.enterState("attack")
-})
-
-
-
-
-Reverse.onStateUpdate("move", () => {
-	if (!Reverse.exists()) return
-	const dir = Flash.pos.sub(Reverse.pos).unit()
-	Reverse.move(dir.scale(REVERSE_SPEED))
-})
-
-Flash.onCollide("bullet", (bullet) => {
-	destroy(bullet)
-	destroy(Flash)
-})
-
-
-// Captian Cold shooter components
-
-const Cold = add([
-    sprite("Captian Cold"),
-    pos(500, 200),
-    scale(0.5),
-    area(),
-    state("attack", ["attack"]),
-])
-
-
-Cold.onStateEnter("attack", async () => {
-    
-    while (Cold.exists()) {
-
-        if (Flash.exists()) {
-            const dir = Flash.pos.sub(Cold.pos).unit()
-
-            add([
-                pos(Cold.pos),
-                move(dir, BULLET_SPEED),
-                rect(12, 12),
+    scene("game", () =>{
+        tileWidth: 50,
+        tileHeight: 50,
+		pos: vec2(64, 64),
+        tiles: {
+            "=": () => [
+                sprite("Cobble Wall"),
                 area(),
-                offscreen({ destroy: true }),
-                anchor("center"),
-                color(BLUE),
-                "freeze",
-            ])
+                body({ isStatic: true }),
+				anchor("center"),
+            ],
         }
 
-        await wait(1.2)
-    }
-})
+    })
 
 
-
-
-
-
-
-
-
-
-/*
-const SPEED = 320
-setGravity(600)
-// load a sprite "bean" from an image
-loadSprite("dog", "images/dog.jpg")
-
-scene("game", () => {
-    // add bean
-    const dog = add([
-    sprite("dog"),
-    pos(80, 200),
-    scale(0.05),
-    area(),
-    body(),
-])
-
-// .jump() when "space" key is pressed
-onKeyPress("space", () => {
-    if (dog.isGrounded()) {
-        dog.jump();
-    }
-});
-onKeyDown("left", () => {
-    // .move() is provided by pos() component, move by pixels per second
-    dog.move(-SPEED, 0)
-})
-
-onKeyDown("right", () => {
-    dog.move(SPEED, 0)
-})
-
-
-
-    // add platform
-    add([
-    rect(width(2), 40),
-    pos(0, height() - 200),
-    area(2),
-    outline(4),
-    body({ isStatic: true }),
-    color(127, 200, 255),
-])
-    // spawn trees
-
-function spawnTree() {
-    add([
-        rect(100, rand(150, 310)),
-        area(),
-        outline(4),
-        pos(width(), height() - 200),
-        anchor("botleft"),
-        color(255, 180, 255),
-        move(LEFT, 240),
-        "tree", // add a tag here
-    ]);
-    wait(rand(0.5, 2.5), () => {
-        spawnTree();
-    });
-}
-
-spawnTree();
-// allows the tree to spawn
-
-
-});
-
-    dog.onCollide("tree", () => {
-        // go to "lose" scene and pass the score
-        go("lose", score);
-        burp();
-        addKaboom(dog.pos);
-    });
-
-scene("lose", (score) => {
-
-    add([
-        sprite("dog"),
-        pos(width() / 2, height() / 2 - 80),
-        scale(2),
-        anchor("center"),
-    ]);
-
-    // display score
-    add([
-        text(score),
-        pos(width() / 2, height() / 2 + 80),
-        scale(2),
-        anchor("center"),
-    ]);
-
-    // go back to game with space is pressed
-    onKeyPress("space", () => go("game"));
-    onClick(() => go("game"));
-
-});
-
-go("game")
-*/
 
 
 
