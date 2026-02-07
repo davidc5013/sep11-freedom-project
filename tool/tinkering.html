@@ -5,85 +5,23 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
         <style>
             /* CSS */
 
         </style>
 
-        <title>Title</title>
+        <title>Basics</title>
     </head>
     <body>
         <!-- HTML -->
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" ></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
         <!-- <script src="script.js"></script> -->
-        <script src="https://unpkg.com/kaboom@3000.0.1/dist/kaboom.js"></script>
-
-
-        <script type="module">
-
-// import kaboom.js
-import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
-
-//goal make some time of rpg free movement game
-
-kaboom()
-//Set up
-loadSprite("The Flash", "images/the_flash.jpg")
-loadSprite("Cobble Wall", "images/wall.jpg")
-debug.inspect = true
-
-
-// ALL DATA NO FUNCTION TO THE GAME
-
-
-    const levels = [
-
-            [
-                "============",
-                "=          =",
-                "= a        =",
-                "=      b   =",
-                "=          =",
-                "=          =",
-                "=  $       =",
-                "============",
-
-
-            ]
-
-    ]
-
-
-    scene("game", () =>{
-		tileWidth: 64,
-        tileHeight: 64,
-        pos: vec2(64, 64),
-        tiles: {
-            "=": () => [
-                sprite("Cobble Wall"),
-                area(),
-                body({ isStatic: true }),
-				anchor("center"),
-            ],
-        }
-
-    })
-
-
-
-
-
-
-
-
-
-</script>
-
-
 
     </body>
 </html>
