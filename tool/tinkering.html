@@ -31,16 +31,25 @@
         "=          =",
         "=          =",
         "=  $       =",
-        "============",
+        "====    ====",
+        "   =    =  ",
+        "   =    =  ",
+        "   =    =  ",
+        "   =    =  ",
+        "   =    ===",
+        "   =       ",
+        "   =       ",
+        "   ========",
+
       ]
-    ];
+    ]
 
     scene("game", () => {
 
       addLevel(levels[0], {
-        tileWidth: 64,
-        tileHeight: 64,
-        pos: vec2(400, 64),
+        tileWidth: 50,
+        tileHeight: 50,
+        pos: vec2(450, 64),
         tiles: {
           "=": () => [
             sprite("wall"),
