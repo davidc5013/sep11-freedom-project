@@ -57,7 +57,13 @@
             body({ isStatic: true }),
             anchor("center"),
           ],
-          "$": ()
+          "$": () => [
+            sprite("flash"),
+            area(),
+            scale(0.5),
+            body({ isStatic: true}),
+            anchor("center"),
+          ]
         },
       });
 
