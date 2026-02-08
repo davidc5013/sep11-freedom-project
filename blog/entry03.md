@@ -40,6 +40,8 @@ Now for this part I had to ask chatgpt to guide me towards the answer on what it
 
 
 
+	const level = addLevel(levels[levelIdx],
+
 
 [Previous](entry02.md) | [Next](entry04.md)
 
