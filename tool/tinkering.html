@@ -16,7 +16,7 @@
     });
 
     // Load sprites
-    loadSprite("flash", "images/the_flash.jpg");
+    loadSprite("flash", "images/the_flash_sprite.jpg");
     loadSprite("wall", "images/cobblewall.jpg");
 
     debug.inspect = true;
@@ -29,8 +29,8 @@
         "= a        =",
         "=      b   =",
         "=          =",
+        "=   $      =",
         "=          =",
-        "=  $       =",
         "====    ====",
         "   =    =  ",
         "   =    =  ",
@@ -59,7 +59,7 @@
           ],
           "$": () => [
             sprite("flash"),
-            area(),
+            area(.5),
             scale(0.5),
             body({ isStatic: true}),
             anchor("center"),
