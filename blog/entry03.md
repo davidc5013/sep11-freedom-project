@@ -10,12 +10,31 @@ When looking at rpg youtube videos and even the kaboom.js example, they had this
 
 
 ‘‘‘
-
+	const levels = [
+		[
+			"===|====",
+			"=      =",
+			"= $    =",
+			"=    a =",
+			"=      =",
+			"=   @  =",
+			"========",
+		],
+		[
+			"--------",
+			"-      -",
+			"-   $  -",
+			"|      -",
+			"-    b -",
+			"-  @   -",
+			"--------",
+		],
+	]
 
 
 ‘‘‘
 
-
+Now for this part I had to ask chatgpt to guide me towards the answer on what it was,
 
 
 [Previous](entry02.md) | [Next](entry04.md)
