@@ -37,7 +37,7 @@ When looking at rpg youtube videos and even the kaboom.js example, they had this
 Now for this part I had to ask chatgpt to guide me towards the answer on what it was. Chagpt said something along the lines of not making the level but the data. IN MY OWN WORDS, imagine your going to build a house, you won't figure out how your going to build the house along the way of making it, your going to NEED a plan, a blue print, thats basically levels. If you notice on the levels, they have brackets because they are arrays containing the blueprint. Levels are the blueprint or data on how the structure of the house is going to look like and thats why you see = in almost a house type of form because it can represents the structure, and something that i learn is that it doesn't have to be a equal sign, it can be @, #,$ or even *, it means something once you define it, like a variable. The symbols within can represent anything as long as you give them something to represent and all of this is within multiple brackets because its an array.
 
 
-
+Another thing i want to mention, after creating the blueprint we move on to the actual making
 
 
 	const level = addLevel(levels[levelIdx],
