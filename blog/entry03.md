@@ -6,7 +6,14 @@ Hello! My last blog was pretty messy, it didn't feel like i describe my thinking
 
 ### The start
 
-When looking at rpg youtube videos and even the kaboom.js example, they had this new topic called ‘const levels‘ 
+When looking at rpg youtube videos and even the kaboom.js example, they had this new topic called ‘const levels‘ and I didn't really get, there was so many symbols like the one below:
+
+
+‘‘‘
+
+
+
+‘‘‘
 
 
 
