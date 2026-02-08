@@ -34,7 +34,7 @@ When looking at rpg youtube videos and even the kaboom.js example, they had this
 
 ‘‘‘
 
-Now for this part I had to ask chatgpt to guide me towards the answer on what it was. Chagpt said something along the lines of 
+Now for this part I had to ask chatgpt to guide me towards the answer on what it was. Chagpt said something along the lines of not making the level but the data. IN MY OWN WORDS, consider when 
 
 
 [Previous](entry02.md) | [Next](entry04.md)
