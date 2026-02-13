@@ -1,11 +1,14 @@
 # Plan
 
-## Tool: 
-## Product: 
+## Tool: KABOOM.JS
+## Product: A speedster rpg video game
 
 ---
 
 ## Timeline
+
+* Starting around the middle and
+
 
 #### MVP
 
@@ -49,7 +52,7 @@
 
 <!-- DO NOT USE THIS YET
 
-#### Peer Feedback 
+#### Peer Feedback
 
 | Name | Glows | Grows |
 | -------- | ------- | ------- |
